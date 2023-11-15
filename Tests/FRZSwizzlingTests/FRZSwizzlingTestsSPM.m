@@ -16,21 +16,21 @@ limitations under the License. */
 @import Foundation;
 @import XCTest;
 
-@import HPNSwizzling;
+@import FRZSwizzling;
 
-#import "Helpers/HPNSimpleObject.h"
-#import "Helpers/HPNSimpleObject+Swizzling.h"
-
-
-
-void _HPNSwizzling_heyTheresARealSymbolInThisLib_(void);
+#import "Helpers/FRZSimpleObject.h"
+#import "Helpers/FRZSimpleObject+Swizzling.h"
 
 
-@interface HPNSwizzlingTestsObjC : XCTestCase
+
+void _FRZSwizzling_heyTheresARealSymbolInThisLib_(void);
+
+
+@interface FRZSwizzlingTestsObjC : XCTestCase
 @end
 
 
-@implementation HPNSwizzlingTestsObjC
+@implementation FRZSwizzlingTestsObjC
 
 - (void)setUp
 {
@@ -40,7 +40,7 @@ void _HPNSwizzling_heyTheresARealSymbolInThisLib_(void);
 - (void)testSimpleSwizzleAtLoad
 {
 	assert(witnesses.count == 0);
-	[[HPNSimpleObject0 new] doTest1];
+	[[FRZSimpleObject0 new] doTest1];
 	XCTAssertEqual(witnesses[@"test1"], @YES);
 	XCTAssertEqual(witnesses[@"MyL0Test1"], @YES);
 }
@@ -49,7 +49,7 @@ void _HPNSwizzling_heyTheresARealSymbolInThisLib_(void);
 {
 	assert(witnesses.count == 0);
 	doSimpleChildSwizzle();
-	[[HPNSimpleObject1 new] doTest2];
+	[[FRZSimpleObject1 new] doTest2];
 	XCTAssertEqual(witnesses[@"test2"], @YES);
 	XCTAssertEqual(witnesses[@"MyL1Test2"], @YES);
 }
@@ -58,7 +58,7 @@ void _HPNSwizzling_heyTheresARealSymbolInThisLib_(void);
 {
 	assert(witnesses.count == 0);
 	doDoubleInvertedSwizzle();
-	[[HPNSimpleObject2 new] doTest3];
+	[[FRZSimpleObject2 new] doTest3];
 	XCTAssertEqual(witnesses[@"test3"], @YES);
 	XCTAssertEqual(witnesses[@"MyL1Test3"], @YES);
 	XCTAssertEqual(witnesses[@"MyL2Test3"], @YES);

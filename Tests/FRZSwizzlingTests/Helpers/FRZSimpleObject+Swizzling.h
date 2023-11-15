@@ -13,21 +13,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License. */
 
-/*
- * Use this file to import your target's public headers that you would like to expose to Swift.
- */
-
-#import "HPNSimpleObject.h"
-#import "HPNSimpleObject+Swizzling.h"
+#import "FRZSimpleObject.h"
 
 
 
+NS_ASSUME_NONNULL_BEGIN
 
+void doSimpleChildSwizzle(void);
+void doDoubleInvertedSwizzle(void);
 
-#ifndef RealSymbolFunctionForCodeCoverage_h
-# define RealSymbolFunctionForCodeCoverage_h
-
-/* Expose this function so we can call it to have a better code coverage… */
-void _HPNSwizzling_heyTheresARealSymbolInThisLib_(void);
-
-#endif /* RealSymbolFunctionForCodeCoverage_h */
+NS_ASSUME_NONNULL_END

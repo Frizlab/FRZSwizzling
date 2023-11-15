@@ -13,40 +13,21 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License. */
 
-#import "HPNSimpleObject.h"
+/*
+ * Use this file to import your target's public headers that you would like to expose to Swift.
+ */
 
-@import Foundation;
-
-
-
-NSMutableDictionary<NSString *, NSNumber *> *witnesses = nil;
-
-
-@implementation HPNSimpleObject0
-
-- (void)doTest1
-{
-	witnesses[@"test1"] = @YES;
-}
-
-- (void)doTest2
-{
-	witnesses[@"test2"] = @YES;
-}
-
-- (void)doTest3
-{
-	witnesses[@"test3"] = @YES;
-}
-
-@end
+#import "FRZSimpleObject.h"
+#import "FRZSimpleObject+Swizzling.h"
 
 
-@implementation HPNSimpleObject1
-
-@end
 
 
-@implementation HPNSimpleObject2
 
-@end
+#ifndef RealSymbolFunctionForCodeCoverage_h
+# define RealSymbolFunctionForCodeCoverage_h
+
+/* Expose this function so we can call it to have a better code coverage… */
+void _FRZSwizzling_heyTheresARealSymbolInThisLib_(void);
+
+#endif /* RealSymbolFunctionForCodeCoverage_h */

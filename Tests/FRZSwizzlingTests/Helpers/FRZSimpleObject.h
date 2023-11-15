@@ -13,5 +13,31 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License. */
 
-/* For SPM only! */
-#import "NSObject+HPNSwizzling.h"
+@import Foundation;
+
+
+
+NS_ASSUME_NONNULL_BEGIN
+
+extern NSMutableDictionary<NSString *, NSNumber *> * _Null_unspecified witnesses;
+
+
+@interface FRZSimpleObject0 : NSObject
+
+- (void)doTest1;
+- (void)doTest2;
+- (void)doTest3;
+
+@end
+
+
+@interface FRZSimpleObject1 : FRZSimpleObject0
+
+@end
+
+
+@interface FRZSimpleObject2 : FRZSimpleObject1
+
+@end
+
+NS_ASSUME_NONNULL_END

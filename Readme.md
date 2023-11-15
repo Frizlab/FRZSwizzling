@@ -1,10 +1,10 @@
-# HPNSwizzling
-![Platforms](https://img.shields.io/badge/platform-macOS%20|%20iOS%20|%20tvOS%20|%20watchOS%20|%20visionOS-lightgrey.svg?style=flat) [![SPM compatible](https://img.shields.io/badge/SPM-compatible-E05C43.svg?style=flat)](https://swift.org/package-manager/) [![License](https://img.shields.io/github/license/happn-app/HPNSwizzling.svg)](License.txt) [![happn](https://img.shields.io/badge/from-happn-0087B4.svg?style=flat)](https://happn.com)
+# FRZSwizzling
+![Platforms](https://img.shields.io/badge/platform-macOS%20|%20iOS%20|%20tvOS%20|%20watchOS%20|%20visionOS-lightgrey.svg?style=flat) [![SPM compatible](https://img.shields.io/badge/SPM-compatible-E05C43.svg?style=flat)](https://swift.org/package-manager/) [![License](https://img.shields.io/github/license/happn-app/FRZSwizzling.svg)](License.txt) [![happn](https://img.shields.io/badge/from-happn-0087B4.svg?style=flat)](https://happn.com)
 
 A swizzling that works.
 
 ## Installation
-Either via SPM (recommended), or by copying `NSObject+HPNSwizzling.{h,m}` into your project.
+Either via SPM (recommended), or by copying `NSObject+FRZSwizzling.{h,m}` into your project.
 
 ### Important Note
 The repository does have an `xcodeproj` with a shared scheme for debug purposes.
@@ -13,7 +13,7 @@ It is not officially supported but might work for you.
 
 ## Usage
 ```objectivec
-@import HPNSwizzling; /* If installed via SPM. */
+@import FRZSwizzling; /* If installed via SPM. */
 
 @implementation NSView (MyViewAdditions)
 
@@ -35,8 +35,8 @@ static void MySetFrame(id self, SEL _cmd, CGRect frame) {
 ```
 
 ## Developers Notes
-The include folder in the HPNSwizzling source code folder is there for SPM-compatibility.
-It contains a special `HPNSwizzling.h` umbrella header and a soft link to the other header.
+The include folder in the FRZSwizzling source code folder is there for SPM-compatibility.
+It contains a special `FRZSwizzling.h` umbrella header and a soft link to the other header.
 
 ## Credits
 This project was originally created by [François Lamboley](https://github.com/Frizlab) while working at [happn](https://happn.com).

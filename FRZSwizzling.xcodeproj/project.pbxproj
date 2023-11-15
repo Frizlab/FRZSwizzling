@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B317611201527E900AD66FD /* HPNSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B317610201527E900AD66FD /* HPNSwizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B317611201527E900AD66FD /* FRZSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B317610201527E900AD66FD /* FRZSwizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7B3176162015282100AD66FD /* ObjcCategoryLibrary.c in Sources */ = {isa = PBXBuildFile; fileRef = 7B3176152015282100AD66FD /* ObjcCategoryLibrary.c */; };
-		7B8BD02320026E8C009BE667 /* HPNSwizzling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8BD01A20026E8C009BE667 /* HPNSwizzling.framework */; };
-		7B8E47D524840E9700FA751E /* HPNSwizzlingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BD034200274B9009BE667 /* HPNSwizzlingTests.swift */; };
-		7BC0AFB52235679400EF4920 /* NSObject+HPNSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0AFB12235679400EF4920 /* NSObject+HPNSwizzling.m */; };
-		7BC0AFB72235679400EF4920 /* NSObject+HPNSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BC0AFB22235679400EF4920 /* NSObject+HPNSwizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7BC0AFC022356A5000EF4920 /* HPNSimpleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0AFBF22356A5000EF4920 /* HPNSimpleObject.m */; };
-		7BC0AFC322356C9000EF4920 /* HPNSimpleObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0AFC222356C9000EF4920 /* HPNSimpleObject+Swizzling.m */; };
+		7B8BD02320026E8C009BE667 /* FRZSwizzling.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8BD01A20026E8C009BE667 /* FRZSwizzling.framework */; };
+		7B8E47D524840E9700FA751E /* FRZSwizzlingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BD034200274B9009BE667 /* FRZSwizzlingTests.swift */; };
+		7BC0AFB52235679400EF4920 /* NSObject+FRZSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0AFB12235679400EF4920 /* NSObject+FRZSwizzling.m */; };
+		7BC0AFB72235679400EF4920 /* NSObject+FRZSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BC0AFB22235679400EF4920 /* NSObject+FRZSwizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7BC0AFC022356A5000EF4920 /* FRZSimpleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0AFBF22356A5000EF4920 /* FRZSimpleObject.m */; };
+		7BC0AFC322356C9000EF4920 /* FRZSimpleObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0AFC222356C9000EF4920 /* FRZSimpleObject+Swizzling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,23 +30,23 @@
 /* Begin PBXFileReference section */
 		7B21BACE2003B2C600DFF758 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; wrapsLines = 1; };
 		7B21BAD12003BF0600DFF758 /* License.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = License.txt; sourceTree = "<group>"; };
-		7B317610201527E900AD66FD /* HPNSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HPNSwizzling.h; sourceTree = "<group>"; };
+		7B317610201527E900AD66FD /* FRZSwizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FRZSwizzling.h; sourceTree = "<group>"; };
 		7B3176152015282100AD66FD /* ObjcCategoryLibrary.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ObjcCategoryLibrary.c; sourceTree = "<group>"; };
-		7B8BD01A20026E8C009BE667 /* HPNSwizzling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HPNSwizzling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8BD01A20026E8C009BE667 /* FRZSwizzling.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FRZSwizzling.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8BD01D20026E8C009BE667 /* Framework-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Framework-Info.plist"; sourceTree = "<group>"; };
-		7B8BD02220026E8C009BE667 /* HPNSwizzlingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPNSwizzlingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8BD02220026E8C009BE667 /* FRZSwizzlingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FRZSwizzlingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B8BD02920026E8C009BE667 /* Test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Test-Info.plist"; sourceTree = "<group>"; };
-		7B8BD034200274B9009BE667 /* HPNSwizzlingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPNSwizzlingTests.swift; sourceTree = "<group>"; };
-		7B8E47D324840C3000FA751E /* HPNSwizzlingTestsSPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPNSwizzlingTestsSPM.m; sourceTree = "<group>"; };
+		7B8BD034200274B9009BE667 /* FRZSwizzlingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRZSwizzlingTests.swift; sourceTree = "<group>"; };
+		7B8E47D324840C3000FA751E /* FRZSwizzlingTestsSPM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRZSwizzlingTestsSPM.m; sourceTree = "<group>"; };
 		7B8E47F22484188600FA751E /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; path = include; sourceTree = "<group>"; };
 		7B8E47F424841BB800FA751E /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		7BC0AFB12235679400EF4920 /* NSObject+HPNSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+HPNSwizzling.m"; sourceTree = "<group>"; };
-		7BC0AFB22235679400EF4920 /* NSObject+HPNSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+HPNSwizzling.h"; sourceTree = "<group>"; };
-		7BC0AFBD22356A4F00EF4920 /* HPNSwizzling-Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HPNSwizzling-Tests-Bridging-Header.h"; sourceTree = "<group>"; };
-		7BC0AFBE22356A5000EF4920 /* HPNSimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPNSimpleObject.h; sourceTree = "<group>"; };
-		7BC0AFBF22356A5000EF4920 /* HPNSimpleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPNSimpleObject.m; sourceTree = "<group>"; };
-		7BC0AFC222356C9000EF4920 /* HPNSimpleObject+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "HPNSimpleObject+Swizzling.m"; sourceTree = "<group>"; };
-		7BC0AFC42235763E00EF4920 /* HPNSimpleObject+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HPNSimpleObject+Swizzling.h"; sourceTree = "<group>"; };
+		7BC0AFB12235679400EF4920 /* NSObject+FRZSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FRZSwizzling.m"; sourceTree = "<group>"; };
+		7BC0AFB22235679400EF4920 /* NSObject+FRZSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FRZSwizzling.h"; sourceTree = "<group>"; };
+		7BC0AFBD22356A4F00EF4920 /* FRZSwizzling-Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FRZSwizzling-Tests-Bridging-Header.h"; sourceTree = "<group>"; };
+		7BC0AFBE22356A5000EF4920 /* FRZSimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRZSimpleObject.h; sourceTree = "<group>"; };
+		7BC0AFBF22356A5000EF4920 /* FRZSimpleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRZSimpleObject.m; sourceTree = "<group>"; };
+		7BC0AFC222356C9000EF4920 /* FRZSimpleObject+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FRZSimpleObject+Swizzling.m"; sourceTree = "<group>"; };
+		7BC0AFC42235763E00EF4920 /* FRZSimpleObject+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FRZSimpleObject+Swizzling.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B8BD02320026E8C009BE667 /* HPNSwizzling.framework in Frameworks */,
+				7B8BD02320026E8C009BE667 /* FRZSwizzling.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,8 +87,8 @@
 		7B661F9C20026ACC00486182 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7B8BD01A20026E8C009BE667 /* HPNSwizzling.framework */,
-				7B8BD02220026E8C009BE667 /* HPNSwizzlingTests.xctest */,
+				7B8BD01A20026E8C009BE667 /* FRZSwizzling.framework */,
+				7B8BD02220026E8C009BE667 /* FRZSwizzlingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,20 +96,20 @@
 		7B8BD01120026AF1009BE667 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				7B8BD01220026AF1009BE667 /* HPNSwizzling */,
+				7B8BD01220026AF1009BE667 /* FRZSwizzling */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		7B8BD01220026AF1009BE667 /* HPNSwizzling */ = {
+		7B8BD01220026AF1009BE667 /* FRZSwizzling */ = {
 			isa = PBXGroup;
 			children = (
 				7B8E47F22484188600FA751E /* include */,
-				7B317610201527E900AD66FD /* HPNSwizzling.h */,
-				7BC0AFB22235679400EF4920 /* NSObject+HPNSwizzling.h */,
-				7BC0AFB12235679400EF4920 /* NSObject+HPNSwizzling.m */,
+				7B317610201527E900AD66FD /* FRZSwizzling.h */,
+				7BC0AFB22235679400EF4920 /* NSObject+FRZSwizzling.h */,
+				7BC0AFB12235679400EF4920 /* NSObject+FRZSwizzling.m */,
 			);
-			path = HPNSwizzling;
+			path = FRZSwizzling;
 			sourceTree = "<group>";
 		};
 		7B8BD01B20026E8C009BE667 /* Xcode Supporting Files */ = {
@@ -118,7 +118,7 @@
 				7B3176152015282100AD66FD /* ObjcCategoryLibrary.c */,
 				7B8BD01D20026E8C009BE667 /* Framework-Info.plist */,
 				7B8BD02920026E8C009BE667 /* Test-Info.plist */,
-				7BC0AFBD22356A4F00EF4920 /* HPNSwizzling-Tests-Bridging-Header.h */,
+				7BC0AFBD22356A4F00EF4920 /* FRZSwizzling-Tests-Bridging-Header.h */,
 			);
 			path = "Xcode Supporting Files";
 			sourceTree = "<group>";
@@ -126,28 +126,28 @@
 		7B8BD031200274B9009BE667 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				7B8BD033200274B9009BE667 /* HPNSwizzlingTests */,
+				7B8BD033200274B9009BE667 /* FRZSwizzlingTests */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		7B8BD033200274B9009BE667 /* HPNSwizzlingTests */ = {
+		7B8BD033200274B9009BE667 /* FRZSwizzlingTests */ = {
 			isa = PBXGroup;
 			children = (
 				7BC0AFBC22356A0400EF4920 /* Helpers */,
-				7B8E47D324840C3000FA751E /* HPNSwizzlingTestsSPM.m */,
-				7B8BD034200274B9009BE667 /* HPNSwizzlingTests.swift */,
+				7B8E47D324840C3000FA751E /* FRZSwizzlingTestsSPM.m */,
+				7B8BD034200274B9009BE667 /* FRZSwizzlingTests.swift */,
 			);
-			path = HPNSwizzlingTests;
+			path = FRZSwizzlingTests;
 			sourceTree = "<group>";
 		};
 		7BC0AFBC22356A0400EF4920 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7BC0AFBE22356A5000EF4920 /* HPNSimpleObject.h */,
-				7BC0AFBF22356A5000EF4920 /* HPNSimpleObject.m */,
-				7BC0AFC42235763E00EF4920 /* HPNSimpleObject+Swizzling.h */,
-				7BC0AFC222356C9000EF4920 /* HPNSimpleObject+Swizzling.m */,
+				7BC0AFBE22356A5000EF4920 /* FRZSimpleObject.h */,
+				7BC0AFBF22356A5000EF4920 /* FRZSimpleObject.m */,
+				7BC0AFC42235763E00EF4920 /* FRZSimpleObject+Swizzling.h */,
+				7BC0AFC222356C9000EF4920 /* FRZSimpleObject+Swizzling.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -159,17 +159,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC0AFB72235679400EF4920 /* NSObject+HPNSwizzling.h in Headers */,
-				7B317611201527E900AD66FD /* HPNSwizzling.h in Headers */,
+				7BC0AFB72235679400EF4920 /* NSObject+FRZSwizzling.h in Headers */,
+				7B317611201527E900AD66FD /* FRZSwizzling.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7B8BD01920026E8C009BE667 /* HPNSwizzling */ = {
+		7B8BD01920026E8C009BE667 /* FRZSwizzling */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7B8BD02B20026E8C009BE667 /* Build configuration list for PBXNativeTarget "HPNSwizzling" */;
+			buildConfigurationList = 7B8BD02B20026E8C009BE667 /* Build configuration list for PBXNativeTarget "FRZSwizzling" */;
 			buildPhases = (
 				7B8BD01520026E8C009BE667 /* Sources */,
 				7B8BD01620026E8C009BE667 /* Frameworks */,
@@ -180,14 +180,14 @@
 			);
 			dependencies = (
 			);
-			name = HPNSwizzling;
+			name = FRZSwizzling;
 			productName = "happnLogger-macOS";
-			productReference = 7B8BD01A20026E8C009BE667 /* HPNSwizzling.framework */;
+			productReference = 7B8BD01A20026E8C009BE667 /* FRZSwizzling.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7B8BD02120026E8C009BE667 /* HPNSwizzlingTests */ = {
+		7B8BD02120026E8C009BE667 /* FRZSwizzlingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7B8BD02E20026E8C009BE667 /* Build configuration list for PBXNativeTarget "HPNSwizzlingTests" */;
+			buildConfigurationList = 7B8BD02E20026E8C009BE667 /* Build configuration list for PBXNativeTarget "FRZSwizzlingTests" */;
 			buildPhases = (
 				7B8BD01E20026E8C009BE667 /* Sources */,
 				7B8BD01F20026E8C009BE667 /* Frameworks */,
@@ -198,9 +198,9 @@
 			dependencies = (
 				7B8BD02520026E8C009BE667 /* PBXTargetDependency */,
 			);
-			name = HPNSwizzlingTests;
+			name = FRZSwizzlingTests;
 			productName = "happnLogger-macOSTests";
-			productReference = 7B8BD02220026E8C009BE667 /* HPNSwizzlingTests.xctest */;
+			productReference = 7B8BD02220026E8C009BE667 /* FRZSwizzlingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -226,7 +226,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7B661F9620026ACC00486182 /* Build configuration list for PBXProject "HPNSwizzling" */;
+			buildConfigurationList = 7B661F9620026ACC00486182 /* Build configuration list for PBXProject "FRZSwizzling" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -239,8 +239,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7B8BD01920026E8C009BE667 /* HPNSwizzling */,
-				7B8BD02120026E8C009BE667 /* HPNSwizzlingTests */,
+				7B8BD01920026E8C009BE667 /* FRZSwizzling */,
+				7B8BD02120026E8C009BE667 /* FRZSwizzlingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC0AFB52235679400EF4920 /* NSObject+HPNSwizzling.m in Sources */,
+				7BC0AFB52235679400EF4920 /* NSObject+FRZSwizzling.m in Sources */,
 				7B3176162015282100AD66FD /* ObjcCategoryLibrary.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,9 +276,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B8E47D524840E9700FA751E /* HPNSwizzlingTests.swift in Sources */,
-				7BC0AFC022356A5000EF4920 /* HPNSimpleObject.m in Sources */,
-				7BC0AFC322356C9000EF4920 /* HPNSimpleObject+Swizzling.m in Sources */,
+				7B8E47D524840E9700FA751E /* FRZSwizzlingTests.swift in Sources */,
+				7BC0AFC022356A5000EF4920 /* FRZSimpleObject.m in Sources */,
+				7BC0AFC322356C9000EF4920 /* FRZSimpleObject+Swizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +287,7 @@
 /* Begin PBXTargetDependency section */
 		7B8BD02520026E8C009BE667 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7B8BD01920026E8C009BE667 /* HPNSwizzling */;
+			target = 7B8BD01920026E8C009BE667 /* FRZSwizzling */;
 			targetProxy = 7B8BD02420026E8C009BE667 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -362,7 +362,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
-				VERSION_INFO_PREFIX = HPN;
+				VERSION_INFO_PREFIX = FRZ;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
@@ -431,7 +431,7 @@
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
-				VERSION_INFO_PREFIX = HPN;
+				VERSION_INFO_PREFIX = FRZ;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
@@ -499,7 +499,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.happn.HPNSwizzlingTests;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Xcode Supporting Files/HPNSwizzling-Tests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Xcode Supporting Files/FRZSwizzling-Tests-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -519,14 +519,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.happn.HPNSwizzlingTests;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Xcode Supporting Files/HPNSwizzling-Tests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Xcode Supporting Files/FRZSwizzling-Tests-Bridging-Header.h";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7B661F9620026ACC00486182 /* Build configuration list for PBXProject "HPNSwizzling" */ = {
+		7B661F9620026ACC00486182 /* Build configuration list for PBXProject "FRZSwizzling" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7B661FA220026ACC00486182 /* Debug */,
@@ -535,7 +535,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7B8BD02B20026E8C009BE667 /* Build configuration list for PBXNativeTarget "HPNSwizzling" */ = {
+		7B8BD02B20026E8C009BE667 /* Build configuration list for PBXNativeTarget "FRZSwizzling" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7B8BD02C20026E8C009BE667 /* Debug */,
@@ -544,7 +544,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7B8BD02E20026E8C009BE667 /* Build configuration list for PBXNativeTarget "HPNSwizzlingTests" */ = {
+		7B8BD02E20026E8C009BE667 /* Build configuration list for PBXNativeTarget "FRZSwizzlingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7B8BD02F20026E8C009BE667 /* Debug */,

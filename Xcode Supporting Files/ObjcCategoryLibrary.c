@@ -17,4 +17,4 @@ limitations under the License. */
  * Objective-c categories are not real symbols.
  * So a lib with only categories is seen as empty by the linker and it compiles with a warning.
  * To get rid of the warning, we add this symbol in the lib. */
-void _HPNSwizzling_heyTheresARealSymbolInThisLib_(void) {}
+void _FRZSwizzling_heyTheresARealSymbolInThisLib_(void) {}

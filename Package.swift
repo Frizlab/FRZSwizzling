@@ -3,12 +3,12 @@ import PackageDescription
 
 
 let package = Package(
-	name: "HPNSwizzling",
+	name: "FRZSwizzling",
 	products: [
-		.library(name: "HPNSwizzling", targets: ["HPNSwizzling"])
+		.library(name: "FRZSwizzling", targets: ["FRZSwizzling"])
 	],
 	targets: [
-		.target(name: "HPNSwizzling"),
-		.testTarget(name: "HPNSwizzlingTests", dependencies: ["HPNSwizzling"], exclude: ["HPNSwizzlingTests.swift"])
+		.target(name: "FRZSwizzling"),
+		.testTarget(name: "FRZSwizzlingTests", dependencies: ["FRZSwizzling"], exclude: ["FRZSwizzlingTests.swift"])
 	]
 )

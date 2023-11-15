@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Volumes/Exchanges/CodeExchanges/HPNSwizzling/HPNSwizzling.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

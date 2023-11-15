@@ -13,15 +13,15 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License. */
 
-#import "HPNSimpleObject+Swizzling.h"
+#import "FRZSimpleObject+Swizzling.h"
 
 @import Foundation;
 
-@import HPNSwizzling;
+@import FRZSwizzling;
 
 
 
-@implementation HPNSimpleObject0 (Swizzling)
+@implementation FRZSimpleObject0 (Swizzling)
 
 static void MyL0Test1(id self, SEL _cmd);
 static void (*OriginalL0Test1)(id self, SEL _cmd);
@@ -33,7 +33,7 @@ static void MyL0Test1(id self, SEL _cmd) {
 
 + (void)load
 {
-	CHECKED_SWIZZLE(HPNSimpleObject0, doTest1, MyL0Test1, OriginalL0Test1);
+	CHECKED_SWIZZLE(FRZSimpleObject0, doTest1, MyL0Test1, OriginalL0Test1);
 }
 
 @end
@@ -48,7 +48,7 @@ static void MyL1Test2(id self, SEL _cmd) {
 }
 
 void doSimpleChildSwizzle(void) {
-	CHECKED_SWIZZLE(HPNSimpleObject1, doTest2, MyL1Test2, OriginalL1Test2);
+	CHECKED_SWIZZLE(FRZSimpleObject1, doTest2, MyL1Test2, OriginalL1Test2);
 }
 
 
@@ -70,6 +70,6 @@ static void MyL2Test3(id self, SEL _cmd) {
 }
 
 void doDoubleInvertedSwizzle(void) {
-	CHECKED_SWIZZLE(HPNSimpleObject2, doTest3, MyL2Test3, OriginalL2Test3);
-	CHECKED_SWIZZLE(HPNSimpleObject1, doTest3, MyL1Test3, OriginalL1Test3);
+	CHECKED_SWIZZLE(FRZSimpleObject2, doTest3, MyL2Test3, OriginalL2Test3);
+	CHECKED_SWIZZLE(FRZSimpleObject1, doTest3, MyL1Test3, OriginalL1Test3);
 }
