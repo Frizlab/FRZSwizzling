@@ -143,8 +143,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC0AFB72235679400EF4920 /* NSObject+FRZSwizzling.h in Headers */,
 				7B317611201527E900AD66FD /* FRZSwizzling.h in Headers */,
+				7BC0AFB72235679400EF4920 /* NSObject+FRZSwizzling.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,9 +260,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B8E47D524840E9700FA751E /* FRZSwizzlingTests.swift in Sources */,
 				7BC0AFC022356A5000EF4920 /* FRZSimpleObject.m in Sources */,
 				7BC0AFC322356C9000EF4920 /* FRZSimpleObject+Swizzling.m in Sources */,
+				7B8E47D524840E9700FA751E /* FRZSwizzlingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
