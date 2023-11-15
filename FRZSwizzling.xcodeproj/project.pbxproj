@@ -96,20 +96,12 @@
 		7B8BD01120026AF1009BE667 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				7B8BD01220026AF1009BE667 /* FRZSwizzling */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		7B8BD01220026AF1009BE667 /* FRZSwizzling */ = {
-			isa = PBXGroup;
-			children = (
 				7B8E47F22484188600FA751E /* include */,
 				7B317610201527E900AD66FD /* FRZSwizzling.h */,
 				7BC0AFB22235679400EF4920 /* NSObject+FRZSwizzling.h */,
 				7BC0AFB12235679400EF4920 /* NSObject+FRZSwizzling.m */,
 			);
-			path = FRZSwizzling;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		7B8BD01B20026E8C009BE667 /* Xcode Supporting Files */ = {
@@ -126,19 +118,11 @@
 		7B8BD031200274B9009BE667 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				7B8BD033200274B9009BE667 /* FRZSwizzlingTests */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		7B8BD033200274B9009BE667 /* FRZSwizzlingTests */ = {
-			isa = PBXGroup;
-			children = (
 				7BC0AFBC22356A0400EF4920 /* Helpers */,
 				7B8E47D324840C3000FA751E /* FRZSwizzlingTestsSPM.m */,
 				7B8BD034200274B9009BE667 /* FRZSwizzlingTests.swift */,
 			);
-			path = FRZSwizzlingTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		7BC0AFBC22356A0400EF4920 /* Helpers */ = {

@@ -8,7 +8,7 @@ let package = Package(
 		.library(name: "FRZSwizzling", targets: ["FRZSwizzling"])
 	],
 	targets: [
-		.target(name: "FRZSwizzling"),
-		.testTarget(name: "FRZSwizzlingTests", dependencies: ["FRZSwizzling"], exclude: ["FRZSwizzlingTests.swift"])
+		.target(name: "FRZSwizzling", path: "Sources"),
+		.testTarget(name: "FRZSwizzlingTests", dependencies: ["FRZSwizzling"], path: "Tests", exclude: ["FRZSwizzlingTests.swift"])
 	]
 )
