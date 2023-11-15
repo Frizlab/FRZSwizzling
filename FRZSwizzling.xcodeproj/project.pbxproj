@@ -442,7 +442,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = "$(DYLIB_CURRENT_VERSION)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.happn.HPNSwizzling;
+				PRODUCT_BUNDLE_IDENTIFIER = me.frizlab.FRZSwizzling;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -465,7 +465,7 @@
 					"@loader_path/Frameworks",
 				);
 				MARKETING_VERSION = "$(DYLIB_CURRENT_VERSION)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.happn.HPNSwizzling;
+				PRODUCT_BUNDLE_IDENTIFIER = me.frizlab.FRZSwizzling;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -485,7 +485,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.happn.HPNSwizzlingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.frizlab.FRZSwizzlingTests;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Xcode Supporting Files/FRZSwizzling-Tests-Bridging-Header.h";
 			};
@@ -505,7 +505,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.happn.HPNSwizzlingTests;
+				PRODUCT_BUNDLE_IDENTIFIER = me.frizlab.FRZSwizzlingTests;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Xcode Supporting Files/FRZSwizzling-Tests-Bridging-Header.h";
 			};
