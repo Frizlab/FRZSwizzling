@@ -33,7 +33,7 @@ class FRZSwizzlingTests : XCTestCase {
 	
 	func testSimpleSwizzleAtLoad() {
 		assert(witnesses.count == 0)
-		FRZSimpleObject0().doTest1()
+		FSZSimpleObject0().doTest1()
 		XCTAssertEqual(witnesses.object(forKey: "test1") as? Bool ?? false, true)
 		XCTAssertEqual(witnesses.object(forKey: "MyL0Test1") as? Bool ?? false, true)
 	}
@@ -41,7 +41,7 @@ class FRZSwizzlingTests : XCTestCase {
 	func testSimpleSwizzleInChild() {
 		assert(witnesses.count == 0)
 		doSimpleChildSwizzle()
-		FRZSimpleObject1().doTest2()
+		FSZSimpleObject1().doTest2()
 		XCTAssertEqual(witnesses.object(forKey: "test2") as? Bool ?? false, true)
 		XCTAssertEqual(witnesses.object(forKey: "MyL1Test2") as? Bool ?? false, true)
 	}
@@ -49,7 +49,7 @@ class FRZSwizzlingTests : XCTestCase {
 	func testDoubleInvertedSwizzle() {
 		assert(witnesses.count == 0)
 		doDoubleInvertedSwizzle()
-		FRZSimpleObject2().doTest3()
+		FSZSimpleObject2().doTest3()
 		XCTAssertEqual(witnesses.object(forKey: "test3") as? Bool ?? false, true)
 		XCTAssertEqual(witnesses.object(forKey: "MyL1Test3") as? Bool ?? false, true)
 		XCTAssertEqual(witnesses.object(forKey: "MyL2Test3") as? Bool ?? false, true)

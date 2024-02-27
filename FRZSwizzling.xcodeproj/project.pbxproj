@@ -13,8 +13,8 @@
 		7B8E47D524840E9700FA751E /* FRZSwizzlingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8BD034200274B9009BE667 /* FRZSwizzlingTests.swift */; };
 		7BC0AFB52235679400EF4920 /* NSObject+FRZSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0AFB12235679400EF4920 /* NSObject+FRZSwizzling.m */; };
 		7BC0AFB72235679400EF4920 /* NSObject+FRZSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 7BC0AFB22235679400EF4920 /* NSObject+FRZSwizzling.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7BC0AFC022356A5000EF4920 /* FRZSimpleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0AFBF22356A5000EF4920 /* FRZSimpleObject.m */; };
-		7BC0AFC322356C9000EF4920 /* FRZSimpleObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0AFC222356C9000EF4920 /* FRZSimpleObject+Swizzling.m */; };
+		7BC0AFC022356A5000EF4920 /* FSZSimpleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0AFBF22356A5000EF4920 /* FSZSimpleObject.m */; };
+		7BC0AFC322356C9000EF4920 /* FSZSimpleObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BC0AFC222356C9000EF4920 /* FSZSimpleObject+Swizzling.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,7 +23,7 @@
 			containerPortal = 7B661F9320026ACC00486182 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7B8BD01920026E8C009BE667;
-			remoteInfo = "happnLogger-macOS";
+			remoteInfo = FRZSwizzling;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -43,10 +43,10 @@
 		7BC0AFB12235679400EF4920 /* NSObject+FRZSwizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FRZSwizzling.m"; sourceTree = "<group>"; };
 		7BC0AFB22235679400EF4920 /* NSObject+FRZSwizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FRZSwizzling.h"; sourceTree = "<group>"; };
 		7BC0AFBD22356A4F00EF4920 /* FRZSwizzling-Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FRZSwizzling-Tests-Bridging-Header.h"; sourceTree = "<group>"; };
-		7BC0AFBE22356A5000EF4920 /* FRZSimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FRZSimpleObject.h; sourceTree = "<group>"; };
-		7BC0AFBF22356A5000EF4920 /* FRZSimpleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FRZSimpleObject.m; sourceTree = "<group>"; };
-		7BC0AFC222356C9000EF4920 /* FRZSimpleObject+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FRZSimpleObject+Swizzling.m"; sourceTree = "<group>"; };
-		7BC0AFC42235763E00EF4920 /* FRZSimpleObject+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FRZSimpleObject+Swizzling.h"; sourceTree = "<group>"; };
+		7BC0AFBE22356A5000EF4920 /* FSZSimpleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSZSimpleObject.h; sourceTree = "<group>"; };
+		7BC0AFBF22356A5000EF4920 /* FSZSimpleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSZSimpleObject.m; sourceTree = "<group>"; };
+		7BC0AFC222356C9000EF4920 /* FSZSimpleObject+Swizzling.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FSZSimpleObject+Swizzling.m"; sourceTree = "<group>"; };
+		7BC0AFC42235763E00EF4920 /* FSZSimpleObject+Swizzling.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FSZSimpleObject+Swizzling.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +68,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B0F46202B8E8BEE001CEC48 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7B661F9220026ACC00486182 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +85,7 @@
 				7B8BD031200274B9009BE667 /* Tests */,
 				7B8BD01B20026E8C009BE667 /* Xcode Supporting Files */,
 				7B661F9C20026ACC00486182 /* Products */,
+				7B0F46202B8E8BEE001CEC48 /* Frameworks */,
 			);
 			indentWidth = 3;
 			sourceTree = "<group>";
@@ -128,10 +136,10 @@
 		7BC0AFBC22356A0400EF4920 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				7BC0AFBE22356A5000EF4920 /* FRZSimpleObject.h */,
-				7BC0AFBF22356A5000EF4920 /* FRZSimpleObject.m */,
-				7BC0AFC42235763E00EF4920 /* FRZSimpleObject+Swizzling.h */,
-				7BC0AFC222356C9000EF4920 /* FRZSimpleObject+Swizzling.m */,
+				7BC0AFBE22356A5000EF4920 /* FSZSimpleObject.h */,
+				7BC0AFBF22356A5000EF4920 /* FSZSimpleObject.m */,
+				7BC0AFC42235763E00EF4920 /* FSZSimpleObject+Swizzling.h */,
+				7BC0AFC222356C9000EF4920 /* FSZSimpleObject+Swizzling.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -165,7 +173,7 @@
 			dependencies = (
 			);
 			name = FRZSwizzling;
-			productName = "happnLogger-macOS";
+			productName = FRZSwizzling;
 			productReference = 7B8BD01A20026E8C009BE667 /* FRZSwizzling.framework */;
 			productType = "com.apple.product-type.framework";
 		};
@@ -183,7 +191,7 @@
 				7B8BD02520026E8C009BE667 /* PBXTargetDependency */,
 			);
 			name = FRZSwizzlingTests;
-			productName = "happnLogger-macOSTests";
+			productName = FRZSwizzlingTests;
 			productReference = 7B8BD02220026E8C009BE667 /* FRZSwizzlingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -194,6 +202,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
+				CLASSPREFIX = FSZ;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = "François Lamboley";
@@ -260,9 +269,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BC0AFC022356A5000EF4920 /* FRZSimpleObject.m in Sources */,
-				7BC0AFC322356C9000EF4920 /* FRZSimpleObject+Swizzling.m in Sources */,
 				7B8E47D524840E9700FA751E /* FRZSwizzlingTests.swift in Sources */,
+				7BC0AFC022356A5000EF4920 /* FSZSimpleObject.m in Sources */,
+				7BC0AFC322356C9000EF4920 /* FSZSimpleObject+Swizzling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,7 +359,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
-				VERSION_INFO_PREFIX = FRZ;
+				VERSION_INFO_PREFIX = FSZ;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
@@ -423,7 +432,7 @@
 				SWIFT_VERSION = 5.0;
 				TVOS_DEPLOYMENT_TARGET = 12.0;
 				VALIDATE_PRODUCT = YES;
-				VERSION_INFO_PREFIX = FRZ;
+				VERSION_INFO_PREFIX = FSZ;
 				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 				XROS_DEPLOYMENT_TARGET = 1.0;
 			};

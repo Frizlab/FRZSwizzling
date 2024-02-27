@@ -21,7 +21,7 @@ limitations under the License. */
 
 
 
-@interface FRZSwizzlingInfo : NSObject
+@interface FSZSwizzlingInfo : NSObject
 
 @property(nonatomic, retain) Class classOfOrigin;
 
@@ -32,7 +32,7 @@ limitations under the License. */
 
 /**
  Whether the swizzle is locked.
- Can only be an `hpn_addOnlyIfNotExist:...` swizzle.
+ Can only be an `fsz_addOnlyIfNotExist:...` swizzle.
  
  If a swizzle is locked, if trying to add/swizzle a method of a superclass with the same selector, an exception must be thrown. */
 @property(nonatomic, assign, getter = isLocked) BOOL locked;
@@ -43,7 +43,7 @@ limitations under the License. */
 @end
 
 
-@implementation FRZSwizzlingInfo
+@implementation FSZSwizzlingInfo
 
 + (instancetype)swizzlingInfosWithClassOfOrigin:(Class)c store:(IMPPointer)store
 {
@@ -52,7 +52,7 @@ limitations under the License. */
 
 + (instancetype)swizzlingInfosWithClassOfOrigin:(Class)c store:(IMPPointer)store locked:(BOOL)locked
 {
-	FRZSwizzlingInfo *ret = [FRZSwizzlingInfo new];
+	FSZSwizzlingInfo *ret = [FSZSwizzlingInfo new];
 	ret.store = store;
 	ret.locked = locked;
 	ret.classOfOrigin = c;
@@ -129,9 +129,9 @@ static CFMutableDictionaryRef swizzlingInfos = NULL;
 		&rSELEqual,
 		&rSELHash
 	};
-	swizzlingInfos = CFDictionaryCreateMutable(kCFAllocatorDefault, 0 /* Capacity */,
-															 &keyCallBacks /* Keys are t_retained_SEL* */,
-															 &kCFTypeDictionaryValueCallBacks /* Values are CFMutableArrayRef of FRZSwizzlingInfo */);
+	swizzlingInfos = CFDictionaryCreateMutable(kCFAllocatorDefault, 0 /* Capacity. */,
+															 &keyCallBacks /* Keys are t_retained_SEL*. */,
+															 &kCFTypeDictionaryValueCallBacks /* Values are CFMutableArrayRef of FSZSwizzlingInfo. */);
 	return swizzlingInfos;
 }
 
@@ -148,27 +148,27 @@ static CFMutableDictionaryRef swizzlingInfos = NULL;
 	return ret;
 }
 
-+ (void)enumerateSwizzlingInfosOfSubclasses:(CFArrayRef)infos includeMyClass:(BOOL)includeMyClass withBlock:(void (^)(FRZSwizzlingInfo *info))block
++ (void)enumerateSwizzlingInfosOfSubclasses:(CFArrayRef)infos includeMyClass:(BOOL)includeMyClass withBlock:(void (^)(FSZSwizzlingInfo *info))block
 {
 	CFIndex n = CFArrayGetCount(infos);
 	for (CFIndex i = 0; i < n; ++i) {
-		FRZSwizzlingInfo *info = CFArrayGetValueAtIndex(infos, i);
+		FSZSwizzlingInfo *info = CFArrayGetValueAtIndex(infos, i);
 		if ([info.classOfOrigin isSubclassOfClass:self] && (includeMyClass || info.classOfOrigin != self))
 			block(info);
 	}
 }
 
-+ (BOOL)hpn_swizzle:(SEL)original with:(IMP)replacement store:(IMPPointer)store
++ (BOOL)fsz_swizzle:(SEL)original with:(IMP)replacement store:(IMPPointer)store
 {
-	return [self hpn_swizzleOrAdd:original with:replacement store:store typesSelector:NULL didAdd:NULL fixChildrenSwizzling:YES];
+	return [self fsz_swizzleOrAdd:original with:replacement store:store typesSelector:NULL didAdd:NULL fixChildrenSwizzling:YES];
 }
 
-+ (BOOL)hpn_swizzleOrAdd:(SEL)original with:(IMP)replacement store:(IMPPointer)store typesSelector:(SEL)backupSelector didAdd:(BOOL *)didAddPtr
++ (BOOL)fsz_swizzleOrAdd:(SEL)original with:(IMP)replacement store:(IMPPointer)store typesSelector:(SEL)backupSelector didAdd:(BOOL *)didAddPtr
 {
-	return [self hpn_swizzleOrAdd:original with:replacement store:store typesSelector:backupSelector didAdd:didAddPtr fixChildrenSwizzling:YES];
+	return [self fsz_swizzleOrAdd:original with:replacement store:store typesSelector:backupSelector didAdd:didAddPtr fixChildrenSwizzling:YES];
 }
 
-+ (BOOL)hpn_swizzleOrAdd:(SEL)original with:(IMP)replacement store:(IMPPointer)store
++ (BOOL)fsz_swizzleOrAdd:(SEL)original with:(IMP)replacement store:(IMPPointer)store
 			  typesSelector:(SEL)backupSelector didAdd:(BOOL *)didAddPtr
 	 fixChildrenSwizzling:(BOOL)fixChildrenSwizzling
 {
@@ -187,7 +187,7 @@ static CFMutableDictionaryRef swizzlingInfos = NULL;
 	}
 	
 	CFMutableArrayRef swizzlingInfos = [self swizzlingInfosForSelector:original];
-	[self enumerateSwizzlingInfosOfSubclasses:swizzlingInfos includeMyClass:YES withBlock:^(FRZSwizzlingInfo *info) {
+	[self enumerateSwizzlingInfosOfSubclasses:swizzlingInfos includeMyClass:YES withBlock:^(FSZSwizzlingInfo *info) {
 		if (info.isLocked) [NSException raise:@"Cannot Swizzle an Added Exclusive Method" format:@"Trying to add an implementation of selector %@ in class %@, but class %@ locked the implementation.", NSStringFromSelector(original), NSStringFromClass(self), NSStringFromClass(info.classOfOrigin)];
 	}];
 	
@@ -211,7 +211,7 @@ static CFMutableDictionaryRef swizzlingInfos = NULL;
 	
 //	FRZTLogI(kLTSwizzling, @"Swizzled selector %@ of %@ with replacement implementation %p", NSStringFromSelector(original), NSStringFromClass(self), replacement);
 	if (fixChildrenSwizzling) {
-		[self enumerateSwizzlingInfosOfSubclasses:swizzlingInfos includeMyClass:NO withBlock:^(FRZSwizzlingInfo *info) {
+		[self enumerateSwizzlingInfosOfSubclasses:swizzlingInfos includeMyClass:NO withBlock:^(FSZSwizzlingInfo *info) {
 			if (info.store == NULL) return;
 			
 			if (*(info.store) == imp) {
@@ -220,22 +220,22 @@ static CFMutableDictionaryRef swizzlingInfos = NULL;
 			}
 		}];
 	}
-	CFArrayAppendValue(swizzlingInfos, CFAutorelease(CFBridgingRetain([FRZSwizzlingInfo swizzlingInfosWithClassOfOrigin:self store:store])));
+	CFArrayAppendValue(swizzlingInfos, CFAutorelease(CFBridgingRetain([FSZSwizzlingInfo swizzlingInfosWithClassOfOrigin:self store:store])));
 	
 	return YES;
 }
 
-+ (BOOL)hpn_addOnlyIfNotExist:(SEL)added with:(IMP)implementation typesSelector:(SEL)typesSelector
++ (BOOL)fsz_addOnlyIfNotExist:(SEL)added with:(IMP)implementation typesSelector:(SEL)typesSelector
 {
-	return [self hpn_addOnlyIfNotExist:added with:implementation typesSelector:typesSelector store:NULL];
+	return [self fsz_addOnlyIfNotExist:added with:implementation typesSelector:typesSelector store:NULL];
 }
 
-+ (BOOL)hpn_addOnlyIfNotExist:(SEL)added with:(IMP)implementation typesSelector:(SEL)typesSelector store:(IMPPointer)store
++ (BOOL)fsz_addOnlyIfNotExist:(SEL)added with:(IMP)implementation typesSelector:(SEL)typesSelector store:(IMPPointer)store
 {
 	if (store != NULL) *store = NULL;
 	
 	CFMutableArrayRef swizzlingInfos = [self swizzlingInfosForSelector:added];
-	[self enumerateSwizzlingInfosOfSubclasses:swizzlingInfos includeMyClass:YES withBlock:^(FRZSwizzlingInfo *info) {
+	[self enumerateSwizzlingInfosOfSubclasses:swizzlingInfos includeMyClass:YES withBlock:^(FSZSwizzlingInfo *info) {
 		if (info.isLocked) [NSException raise:@"Cannot Add an Exclusive Method" format:@"Trying to add an implementation of selector %@ in class %@, but class %@ locked the implementation.", NSStringFromSelector(added), NSStringFromClass(self), NSStringFromClass(info.classOfOrigin)];
 	}];
 	
@@ -256,14 +256,14 @@ static CFMutableDictionaryRef swizzlingInfos = NULL;
 		return NO;
 	}
 	
-	CFArrayAppendValue(swizzlingInfos, CFAutorelease(CFBridgingRetain([FRZSwizzlingInfo swizzlingInfosWithClassOfOrigin:self store:store locked:(store == NULL)])));
+	CFArrayAppendValue(swizzlingInfos, CFAutorelease(CFBridgingRetain([FSZSwizzlingInfo swizzlingInfosWithClassOfOrigin:self store:store locked:(store == NULL)])));
 	return YES;
 }
 
-+ (void)hpn_lockSwizzlingOfSelector:(SEL)sel
++ (void)fsz_lockSwizzlingOfSelector:(SEL)sel
 {
 	CFMutableArrayRef swizzlingInfos = [self swizzlingInfosForSelector:sel];
-	CFArrayAppendValue(swizzlingInfos, CFAutorelease(CFBridgingRetain([FRZSwizzlingInfo swizzlingInfosWithClassOfOrigin:self store:NULL locked:YES])));
+	CFArrayAppendValue(swizzlingInfos, CFAutorelease(CFBridgingRetain([FSZSwizzlingInfo swizzlingInfosWithClassOfOrigin:self store:NULL locked:YES])));
 }
 
 @end

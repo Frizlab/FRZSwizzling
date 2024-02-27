@@ -13,40 +13,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License. */
 
-#import "FRZSimpleObject.h"
-
-@import Foundation;
+#import "FSZSimpleObject.h"
 
 
 
-NSMutableDictionary<NSString *, NSNumber *> *witnesses = nil;
+NS_ASSUME_NONNULL_BEGIN
 
+void doSimpleChildSwizzle(void);
+void doDoubleInvertedSwizzle(void);
 
-@implementation FRZSimpleObject0
-
-- (void)doTest1
-{
-	witnesses[@"test1"] = @YES;
-}
-
-- (void)doTest2
-{
-	witnesses[@"test2"] = @YES;
-}
-
-- (void)doTest3
-{
-	witnesses[@"test3"] = @YES;
-}
-
-@end
-
-
-@implementation FRZSimpleObject1
-
-@end
-
-
-@implementation FRZSimpleObject2
-
-@end
+NS_ASSUME_NONNULL_END

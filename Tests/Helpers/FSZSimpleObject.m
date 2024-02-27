@@ -13,31 +13,40 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License. */
 
+#import "FSZSimpleObject.h"
+
 @import Foundation;
 
 
 
-NS_ASSUME_NONNULL_BEGIN
-
-extern NSMutableDictionary<NSString *, NSNumber *> * _Null_unspecified witnesses;
+NSMutableDictionary<NSString *, NSNumber *> *witnesses = nil;
 
 
-@interface FRZSimpleObject0 : NSObject
+@implementation FSZSimpleObject0
 
-- (void)doTest1;
-- (void)doTest2;
-- (void)doTest3;
+- (void)doTest1
+{
+	witnesses[@"test1"] = @YES;
+}
+
+- (void)doTest2
+{
+	witnesses[@"test2"] = @YES;
+}
+
+- (void)doTest3
+{
+	witnesses[@"test3"] = @YES;
+}
 
 @end
 
 
-@interface FRZSimpleObject1 : FRZSimpleObject0
+@implementation FSZSimpleObject1
 
 @end
 
 
-@interface FRZSimpleObject2 : FRZSimpleObject1
+@implementation FSZSimpleObject2
 
 @end
-
-NS_ASSUME_NONNULL_END

@@ -18,19 +18,23 @@ limitations under the License. */
 
 @import FRZSwizzling;
 
-#import "Helpers/FRZSimpleObject.h"
-#import "Helpers/FRZSimpleObject+Swizzling.h"
+#import "Helpers/FSZSimpleObject.h"
+#import "Helpers/FSZSimpleObject+Swizzling.h"
 
 
 
 void _FRZSwizzling_heyTheresARealSymbolInThisLib_(void);
 
 
-@interface FRZSwizzlingTestsObjC : XCTestCase
+/* Should it be FSZFRZSwizzlingTestsSPM?
+ * The mystery remains; I’ll settle on: no.
+ * Rationale: the class is not published, so we don’t care about its prefix. */
+@interface FRZSwizzlingTestsSPM : XCTestCase
 @end
 
 
-@implementation FRZSwizzlingTestsObjC
+/* SPM does not allow mixing languages, so we do the tests in ObjC for SPM. */
+@implementation FRZSwizzlingTestsSPM
 
 - (void)setUp
 {
@@ -40,7 +44,7 @@ void _FRZSwizzling_heyTheresARealSymbolInThisLib_(void);
 - (void)testSimpleSwizzleAtLoad
 {
 	assert(witnesses.count == 0);
-	[[FRZSimpleObject0 new] doTest1];
+	[[FSZSimpleObject0 new] doTest1];
 	XCTAssertEqual(witnesses[@"test1"], @YES);
 	XCTAssertEqual(witnesses[@"MyL0Test1"], @YES);
 }
@@ -49,7 +53,7 @@ void _FRZSwizzling_heyTheresARealSymbolInThisLib_(void);
 {
 	assert(witnesses.count == 0);
 	doSimpleChildSwizzle();
-	[[FRZSimpleObject1 new] doTest2];
+	[[FSZSimpleObject1 new] doTest2];
 	XCTAssertEqual(witnesses[@"test2"], @YES);
 	XCTAssertEqual(witnesses[@"MyL1Test2"], @YES);
 }
@@ -58,7 +62,7 @@ void _FRZSwizzling_heyTheresARealSymbolInThisLib_(void);
 {
 	assert(witnesses.count == 0);
 	doDoubleInvertedSwizzle();
-	[[FRZSimpleObject2 new] doTest3];
+	[[FSZSimpleObject2 new] doTest3];
 	XCTAssertEqual(witnesses[@"test3"], @YES);
 	XCTAssertEqual(witnesses[@"MyL1Test3"], @YES);
 	XCTAssertEqual(witnesses[@"MyL2Test3"], @YES);

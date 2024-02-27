@@ -13,13 +13,31 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License. */
 
-#import "FRZSimpleObject.h"
+@import Foundation;
 
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-void doSimpleChildSwizzle(void);
-void doDoubleInvertedSwizzle(void);
+extern NSMutableDictionary<NSString *, NSNumber *> * _Null_unspecified witnesses;
+
+
+@interface FSZSimpleObject0 : NSObject
+
+- (void)doTest1;
+- (void)doTest2;
+- (void)doTest3;
+
+@end
+
+
+@interface FSZSimpleObject1 : FSZSimpleObject0
+
+@end
+
+
+@interface FSZSimpleObject2 : FSZSimpleObject1
+
+@end
 
 NS_ASSUME_NONNULL_END

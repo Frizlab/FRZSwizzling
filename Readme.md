@@ -28,7 +28,7 @@ static void MySetFrame(id self, SEL _cmd, CGRect frame) {
 
 + (void)load
 {
-   CHECKED_SWIZZLE(NSView, setFrame:, MySetFrame, OriginalSetFrame);
+   FSZ_CHECKED_SWIZZLE(NSView, setFrame:, MySetFrame, OriginalSetFrame);
 }
 
 @end
@@ -36,7 +36,7 @@ static void MySetFrame(id self, SEL _cmd, CGRect frame) {
 
 ## Developers Notes
 The include folder in the FRZSwizzling source code folder is there for SPM-compatibility.
-It contains a special `FRZSwizzling.h` umbrella header and a soft link to the other header.
+It contains a special `FRZSwizzling.h` umbrella header and a soft link to the other (public) header.
 
 ## Credits
 This project was originally created by [François Lamboley](https://github.com/Frizlab) while working at [happn](https://happn.com).

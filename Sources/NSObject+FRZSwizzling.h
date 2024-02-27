@@ -23,8 +23,8 @@ limitations under the License. */
 
 
 /* Stringification. */
-#define _FRZsharp(x) #x
-#define FRZS(x) _FRZsharp(x)
+#define _FSZsharp(x) #x
+#define FSZ_S(x) _FSZsharp(x)
 
 typedef IMP *IMPPointer;
 
@@ -53,7 +53,7 @@ static void MySetFrame(id self, SEL _cmd, CGRect frame) {
 
 + (void)load
 {
-	CHECKED_SWIZZLE(NSView, setFrame:, MySetFrame, OriginalSetFrame);
+	FSZ_CHECKED_SWIZZLE(NSView, setFrame:, MySetFrame, OriginalSetFrame);
 }
 
 @end
@@ -63,10 +63,10 @@ static void MySetFrame(id self, SEL _cmd, CGRect frame) {
 /**
  Swizzle a method in the receiver’s class.
  
- Fixes parent swizzling by default (see ``hpn_swizzleOrAdd:with:store:typesSelector:didAdd:fixChildrenSwizzling:`` for more info). */
-+ (BOOL)hpn_swizzle:(SEL)original with:(IMP)replacement store:(IMPPointer)store;
-/** Calls ``hpn_swizzleOrAdd:with:store:typesSelector:didAdd:fixChildrenSwizzling:`` with `fixChildrenSwizzling` set to `YES`. */
-+ (BOOL)hpn_swizzleOrAdd:(SEL)original with:(IMP)replacement store:(IMPPointer)store
+ Fixes parent swizzling by default (see ``fsz_swizzleOrAdd:with:store:typesSelector:didAdd:fixChildrenSwizzling:`` for more info). */
++ (BOOL)fsz_swizzle:(SEL)original with:(IMP)replacement store:(IMPPointer)store;
+/** Calls ``fsz_swizzleOrAdd:with:store:typesSelector:didAdd:fixChildrenSwizzling:`` with `fixChildrenSwizzling` set to `YES`. */
++ (BOOL)fsz_swizzleOrAdd:(SEL)original with:(IMP)replacement store:(IMPPointer)store
 			  typesSelector:(SEL)backupSelector didAdd:(BOOL *)didAddPtr;
 
 /**
@@ -96,7 +96,7 @@ static void MySetFrame(id self, SEL _cmd, CGRect frame) {
  It is highly recommended that you keep a reference to the original implementation of the method using the store variable:
   when you swizzle a method, you practically always have to call the original method.
  (Giving a `NULL` `store` will print a warning in the logs.) */
-+ (BOOL)hpn_swizzleOrAdd:(SEL)original with:(IMP)replacement store:(IMPPointer)store
++ (BOOL)fsz_swizzleOrAdd:(SEL)original with:(IMP)replacement store:(IMPPointer)store
 			  typesSelector:(SEL)typesSelector didAdd:(BOOL *)didAddPtr
 	 fixChildrenSwizzling:(BOOL)fixChildrenSwizzling;
 
@@ -105,8 +105,8 @@ static void MySetFrame(id self, SEL _cmd, CGRect frame) {
  The selector is added only if it was not present in the class.
 
  Returns `NO` if the method was not added (it is already in the class, or there is an error getting the types to add the method).
- Calls ``hpn_addOnlyIfNotExist:with:typesSelector:store:`` with `store` set to `NULL`. */
-+ (BOOL)hpn_addOnlyIfNotExist:(SEL)added with:(IMP)implementation typesSelector:(SEL)typesSelector;
+ Calls ``fsz_addOnlyIfNotExist:with:typesSelector:store:`` with `store` set to `NULL`. */
++ (BOOL)fsz_addOnlyIfNotExist:(SEL)added with:(IMP)implementation typesSelector:(SEL)typesSelector;
 
 /**
  Add a new instance selector in the class.
@@ -120,13 +120,13 @@ static void MySetFrame(id self, SEL _cmd, CGRect frame) {
  
  - Note: If store is non-`NULL`, it must always point to a valid memory location while the application is launched
   (unless you don’t plan on fixing children swizzling).
- (This is the same rule as the `hpn_swizzleOrAdd:...` methods.) */
-+ (BOOL)hpn_addOnlyIfNotExist:(SEL)added with:(IMP)implementation typesSelector:(SEL)typesSelector store:(IMPPointer)store;
+ (This is the same rule as the `fsz_swizzleOrAdd:...` methods.) */
++ (BOOL)fsz_addOnlyIfNotExist:(SEL)added with:(IMP)implementation typesSelector:(SEL)typesSelector store:(IMPPointer)store;
 
 /**
  Any further swizzling (by methods from this category) of the given selector on any superclass of the calling class or the calling class
   will throw an exception after this method is called. */
-+ (void)hpn_lockSwizzlingOfSelector:(SEL)sel;
++ (void)fsz_lockSwizzlingOfSelector:(SEL)sel;
 
 @end
 
@@ -136,15 +136,15 @@ static void MySetFrame(id self, SEL _cmd, CGRect frame) {
    ******************** */
 /* Use these if you want to automatically throw an exception if there was an error swizzling/adding methods. */
 
-#define CHECKED_SWIZZLE(theClass, theSelector, IMPFuncName, IMPPointerName) \
-	if (![theClass hpn_swizzle:@selector(theSelector) with:(IMP)IMPFuncName store:(IMPPointer)&IMPPointerName]) \
-		[NSException raise:@"Cannot swizzle a method" format:@"Tried to swizzle \""FRZS(theSelector)"\" in class \""FRZS(theClass)"\" with my version, but it failed."]; \
-	if (IMPPointerName == NULL) [NSException raise:@"Swizzled a method, but original function pointer is NULL" format:@"Swizzled \""FRZS(theSelector)"\", but "FRZS(IMPPointerName)" is NULL."]
+#define FSZ_CHECKED_SWIZZLE(theClass, theSelector, IMPFuncName, IMPPointerName) \
+	if (![theClass fsz_swizzle:@selector(theSelector) with:(IMP)IMPFuncName store:(IMPPointer)&IMPPointerName]) \
+		[NSException raise:@"Cannot swizzle a method" format:@"Tried to swizzle \""FSZ_S(theSelector)"\" in class \""FSZ_S(theClass)"\" with my version, but it failed."]; \
+	if (IMPPointerName == NULL) [NSException raise:@"Swizzled a method, but original function pointer is NULL" format:@"Swizzled \""FSZ_S(theSelector)"\", but "FSZ_S(IMPPointerName)" is NULL."]
 
-#define CHECKED_SWIZZLE_OR_ADD(theClass, theSelector, IMPFuncName, IMPPointerName, backupSelector) \
-	if (![theClass hpn_swizzleOrAdd:@selector(theSelector) with:(IMP)IMPFuncName store:(IMPPointer)&IMPPointerName typesSelector:@selector(backupSelector)]) \
-		[NSException raise:@"Cannot swizzle or add a method" format:@"Tried to swizzle or add \""FRZS(theSelector)"\" in class \""FRZS(theClass)"\", but it failed."]
+#define FSZ_CHECKED_SWIZZLE_OR_ADD(theClass, theSelector, IMPFuncName, IMPPointerName, backupSelector) \
+	if (![theClass fsz_swizzleOrAdd:@selector(theSelector) with:(IMP)IMPFuncName store:(IMPPointer)&IMPPointerName typesSelector:@selector(backupSelector)]) \
+		[NSException raise:@"Cannot swizzle or add a method" format:@"Tried to swizzle or add \""FSZ_S(theSelector)"\" in class \""FSZ_S(theClass)"\", but it failed."]
 
-#define CHECKED_ADD_ONLY_IF_NOT_EXIST(theClass, theSelector, IMPFuncName, theTypesSelector) \
-	if (![theClass hpn_addOnlyIfNotExist:@selector(theSelector) with:(IMP)IMPFuncName typesSelector:@selector(theTypesSelector)]) \
-		[NSException raise:@"Cannot add method only if not exist" format:@"Tried to add \""FRZS(theSelector)"\" only if does not exist in class \""FRZS(theClass)"\", but it failed. Maybe it does exist?"]
+#define FSZ_CHECKED_ADD_ONLY_IF_NOT_EXIST(theClass, theSelector, IMPFuncName, theTypesSelector) \
+	if (![theClass fsz_addOnlyIfNotExist:@selector(theSelector) with:(IMP)IMPFuncName typesSelector:@selector(theTypesSelector)]) \
+		[NSException raise:@"Cannot add method only if not exist" format:@"Tried to add \""FSZ_S(theSelector)"\" only if does not exist in class \""FSZ_S(theClass)"\", but it failed. Maybe it does exist?"]
